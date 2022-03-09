@@ -1,0 +1,49 @@
+
+
+@hostname = http://localhost:5000/api
+
+
+
+get http://localhost:5000/api
+
+###
+
+get {{hostname}}
+
+###
+
+get http://localhost:5000/api/accounts/nico
+
+###
+
+get http://localhost:5000/api/accounts/roger
+
+###
+
+post http://localhost:5000/api/accounts
+content-type: application/json
+
+{
+  "user": "loulou",
+  "currency": "euro",
+  "balance": 500
+}
+
+###
+
+get http://localhost:5000/api/accounts/loulou
+
+###
+
+put http://localhost:5000/api/accounts/nico
+content-type: application/json
+
+{
+  "currency": "dollar",
+  "description": "some new blabla"
+}
+
+###
+
+delete http://localhost:5000/api/accounts/loulou
+content-type: application/json
